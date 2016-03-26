@@ -11,6 +11,10 @@ Contact.prototype.fullName = function() {
   return this.firstName + ' ' + this.lastName;
 }
 
+Contact.prototype.contactName = function() {
+  return this.firstName.toLowerCase() + '-' + this.lastName.toLowerCase();;
+}
+
 // Constructor for Address
 function Address(street, city, state, zip) {
   this.contactStreet = street;
@@ -24,7 +28,32 @@ Address.prototype.fullAddress = function() {
 }
 
 function addAddress() {
-  return '<span class="btn btn-primary btn-sm" id="add-address">Add Another Address</span>'
+  return '<span class="btn btn-primary btn-sm newAddress" id="add-address">Add Another Address</span>'
+}
+
+function addressFields() {
+  return '<div class="new-address col-md-offset-3">' +
+            '<div class="form-group">' +
+              '<label for="new-street">Location Label</label>' +
+              '<input type="text" class="form-control new-street">' +
+            '</div>' +
+            '<div class="form-group">' +
+              '<label for="new-street">Street</label>' +
+              '<input type="text" class="form-control new-street">' +
+            '</div>' +
+            '<div class="form-group">' +
+              '<label for="new-city">City</label>' +
+              '<input type="text" class="form-control new-city">' +
+            '</div>' +
+            '<div class="form-group">' +
+              '<label for="new-state">State</label>' +
+              '<input type="text" class="form-control new-state">' +
+            '</div>' +
+            '<div class="form-group">' +
+              '<label for="new-state">Zip</label>' +
+              '<input type="text" class="form-control new-zip">' +
+            '</div>' +
+          '</div>'
 }
 
  // append new address field to the form
@@ -50,27 +79,13 @@ $(function() {
       $('#show-contact h2').text(newContact.fullName());
       $('.first-name').text(newContact.firstName);
       $('.last-name').text(newContact.lastName);
+      $('#addresses').append('<li>' +  + '</li>')
     });
 
+    $('.newAddress').addClass(newContact.contactName());
+
     $('#add-address').click(function() { // append new address field to the form
-      $("#contacts").after('<div class="new-address col-md-offset-3">' +
-                                   '<div class="form-group">' +
-                                     '<label for="new-street">Street</label>' +
-                                     '<input type="text" class="form-control new-street">' +
-                                   '</div>' +
-                                   '<div class="form-group">' +
-                                     '<label for="new-city">City</label>' +
-                                     '<input type="text" class="form-control new-city">' +
-                                   '</div>' +
-                                   '<div class="form-group">' +
-                                     '<label for="new-state">State</label>' +
-                                     '<input type="text" class="form-control new-state">' +
-                                   '</div>' +
-                                   '<div class="form-group">' +
-                                     '<label for="new-state">Zip</label>' +
-                                     '<input type="text" class="form-control new-zip">' +
-                                   '</div>' +
-                                 '</div>');
+      $("." + newContact.contactName()).after(addressFields());
     });
 
   });
