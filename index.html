@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Address Book</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </head>
+  <body>
+    <div class="bg"></div>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Address Book</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur Batman exercitation </p>
+      </div> <!-- /Container -->
+    </div>  <!-- /Jumbotron -->
+
+    <div class="container">
+  <!-- Row: 1 -->
+      <div class="row">
+        <div class="col-sm-6 footer">
+
+  <!-- Form -->
+          <form class="">
+            <div class="form-group">
+              <label for="new-first-name">First Name:</label>
+              <input class="new-first-name form-control" type="text" autofocus>
+            </div>
+
+            <div class="form-group">
+              <label for="new-last-name">Last Name:</label>
+              <input class="new-last-name form-control" type="text" autofocus>
+            </div>
+
+            <!-- Address -->
+            <div id="new-addresses">
+              <div class="new-address">
+                <div class="form-group">
+                  <label for="new-street">Street:</label>
+                  <input class="new-street form-control">
+                </div>
+
+                <div class="form-group">
+                  <label for="new-city">City:</label>
+                  <input class="new-city form-control">
+                </div>
+
+                <div class="form-group">
+                  <label for="new-state">State:</label>
+                  <input class="new-state form-control">
+                </div>
+
+                <div class="form-group">
+                  <label for="new-zip">Zip:</label>
+                  <input class="new-zip form-control">
+                </div>
+              </div>
+            </div>  <!-- /id=new-address -->
+
+            <button class="btn btn-info" type="submit" name="button">Show Contact</button>
+
+          </form>
+
+          <h3>Contacts</h3>
+          <ul id="contacts">
+
+          </ul>
+
+        </div>  <!-- /col-sm-6 -->
+
+<!-- RESULTS  -->
+        <div class="col-sm-6">
+          <div id="show-contact">
+            <h2></h2>
+            <p>First name: <span class="first-name"></span></p>
+            <p>Last name: <span class="last-name"></span></p>
+          </div>
+        </div>  <!-- /col-sm-6 -->
+
+      </div>  <!-- /Row -->
+
+
+    </div>  <!-- /Container -->
+
+  </body>
+</html>
