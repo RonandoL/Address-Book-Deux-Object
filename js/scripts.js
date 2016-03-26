@@ -51,6 +51,28 @@ $(function() {
       $('.first-name').text(newContact.firstName);
       $('.last-name').text(newContact.lastName);
     });
+
+    $('#add-address').click(function() { // append new address field to the form
+      $("#contacts").after('<div class="new-address col-md-offset-3">' +
+                                   '<div class="form-group">' +
+                                     '<label for="new-street">Street</label>' +
+                                     '<input type="text" class="form-control new-street">' +
+                                   '</div>' +
+                                   '<div class="form-group">' +
+                                     '<label for="new-city">City</label>' +
+                                     '<input type="text" class="form-control new-city">' +
+                                   '</div>' +
+                                   '<div class="form-group">' +
+                                     '<label for="new-state">State</label>' +
+                                     '<input type="text" class="form-control new-state">' +
+                                   '</div>' +
+                                   '<div class="form-group">' +
+                                     '<label for="new-state">Zip</label>' +
+                                     '<input type="text" class="form-control new-zip">' +
+                                   '</div>' +
+                                 '</div>');
+    });
+
   });
 
 
